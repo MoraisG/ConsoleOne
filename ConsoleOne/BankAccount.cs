@@ -57,5 +57,23 @@ namespace ConsoleOne
             var saque = new Transaction(Montante, dataSaque, Obs);
             this.allTransactions.Add(saque);
         }
+
+
+        public string GetAccountHistory() 
+        {
+            var report = new System.Text.StringBuilder();
+            decimal balance = 0;
+            report.AppendLine("Date\t\tAmount\tBalance\tNote");
+            foreach (var item in allTransactions)
+            {
+                balance += item.Amount;
+                report.AppendLine($"{item.Date.ToShortDateString()}\t{item.Amount}\t{balance}\t{item.Notes}");
+            }
+
+
+            return report.ToString();
+        } 
+
+
     }
 }

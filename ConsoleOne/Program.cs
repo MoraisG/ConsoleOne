@@ -18,18 +18,18 @@ namespace ConsoleOne
             Console.WriteLine($"Saldo disponível {conta.Balance}");
 
 
-            try
-            {
-                var contaInvalida = new BankAccount("Alcione", -50);
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                Console.WriteLine("Não foi possível criar a conta");
-                Console.WriteLine(e.ToString());
+         //  try
+         //  {
+         //       var contaInvalida = new BankAccount("Alcione", -50);
+         //  }
+         //   catch (ArgumentOutOfRangeException e)
+         //   {
+         //       Console.WriteLine("Não foi possível criar a conta");
+         //       Console.WriteLine(e.ToString());
                // throw;
-            }
+         //   }
 
-            
+            Console.WriteLine(conta.GetAccountHistory()); 
 
         }
 }
